@@ -185,7 +185,6 @@ class Revolut:
 
     def get_account_transactions(self, from_date):
         """ Get the account transactions and return as json """
-        wallet_id = self.get_wallet_id()
         from_date_ts = from_date.timestamp()
         path = _URL_GET_TRANSACTIONS + '?from={from_date_ts}&walletId={wallet_id}'.format(
             from_date_ts=int(from_date_ts) * 1000,
