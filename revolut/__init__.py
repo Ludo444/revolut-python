@@ -188,7 +188,7 @@ class Revolut:
         wallet_id = self.get_wallet_id()
         from_date_ts = from_date.timestamp()
         path = _URL_GET_TRANSACTIONS + '?from={from_date_ts}&walletId={wallet_id}'.format(
-            from_date_ts=int(from_date_ts),
+            from_date_ts=int(from_date_ts) * 1000,
             wallet_id=self.get_wallet_id()
         )
         ret = self.client._get(path)
